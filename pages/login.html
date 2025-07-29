@@ -1,18 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
     <link rel="stylesheet" href="../styles/main.css">
-    <title>Login Posts</title>
 </head>
-
 <body>
-    <header></header>
-    <main></main>
-    <footer></footer>
-</body>
-<script src="../scripts/login.js"></script>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="username">Usuário:</label>
+            <input type="text" id="username" required placeholder="Digite seu usuário">
 
+            <label for="password">Senha:</label>
+            <input type="password" id="password" required placeholder="Digite sua senha">
+
+            <button type="submit">Entrar</button>
+        </form>
+        <div id="error-message" style="color: rgb(236, 172, 255); display: none;">Credenciais inválidas</div>
+    </div>
+
+    <script src="../scripts/login.js"></script>
+</body>
 </html>
