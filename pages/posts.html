@@ -1,18 +1,31 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Posts</title>
-    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <title>Login Posts</title>
 </head>
+
 <body>
-    <div class="posts-container">
-        <input type="text" id="search" placeholder="Pesquisar por título" />
+    <h1>faça sua busca</h1>
+    <main>
+        <div id="postsContainer">
+        </div>
 
-        <div id="posts-list"></div>
-    </div>
-
-    <script src="../scripts/posts.js"></script>
+          <div id="detalhes" class="modal oculto">
+            <div class="janela">
+                <div class="header-modal">
+                    <h3>Detalhes do Post</h3>
+                    <button onclick="fecharModal()">X</button>
+                </div>
+                <div id="conteudo"></div>
+            </div>
+        </div>
+    </main>
+    <footer></footer>
 </body>
+<script src="../scripts/posts.js"></script>
+
 </html>

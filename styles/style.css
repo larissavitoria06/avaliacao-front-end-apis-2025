@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+:root {
+    --primary: #7e4b96;
+    --secondary: #d3b3e2;
+    --text-dark: #333;
+    --text-light: #fff;
+    --bg-main: #ffffff;
+    --bg-modal: rgba(0, 0, 0, 0.5);
+}
+
+body {
+    background-color: var(--bg-main);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+header {
+    background-color: var(--primary);
+    color: var(--text-light);
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+}
+
+h1 {
+    margin: 0;
+    color: var(--text-dark);
+}
+
+.car-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    width: 100%;
+}
+
+.car-card {
+    border: 3px solid var(--primary);
+    border-radius: 10px;
+    width: 250px;
+    padding: 1.5rem;
+    background-color: var(--bg-main);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.car-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.car-card p {
+    margin: 8px 0;
+    color: var(--text-dark);
+}
+
+button {
+    padding: 10px 16px;
+    background-color: var(--primary);
+    color: var(--text-light);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #683d7a;
+}
+
+.header-modal button {
+    background: transparent;
+    border: none;
+    font-size: 1.2em;
+    color: var(--text-dark);
+}
+
+footer {
+    background-color: var(--primary);
+    color: var(--text-light);
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    margin-top: auto;
+}
+
+#postsContainer {
+    width: 90%;
+    max-width: 800px;
+}
+
+.post {
+    background-color: var(--secondary);
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.post h2 {
+    color: var(--text-light);
+}
+
+.post p, .post strong {
+    color: var(--text-dark);
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-modal);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s ease;
+}
+
+.modal:not(.oculto) {
+    visibility: visible;
+    opacity: 1;
+}
+
+.janela {
+    background: var(--secondary);
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+}
+
+.header-modal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.oculto {
+    visibility: hidden;
+    opacity: 0;
+}
