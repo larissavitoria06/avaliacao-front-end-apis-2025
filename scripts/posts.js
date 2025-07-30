@@ -253,16 +253,16 @@ const userPosts = [
   }
 ];
 
-function posts() {
+function renderPosts(postsToRender = userPosts) {
   const postsContainer = document.getElementById('postsContainer');
+  if (!postsContainer) return;
+  
   postsContainer.innerHTML = '';
 
-
-  userPosts.forEach(post => {
+  postsToRender.forEach(post => {
     const postElement = document.createElement('div');
-    postElement.classList.add('post'); 
+    postElement.classList.add('post');
 
-  
     postElement.innerHTML = `
       <h2>${post.title}</h2>
       <p><strong>ID do post:</strong> ${post.id}</p>
@@ -272,35 +272,40 @@ function posts() {
       <button onclick="mostrarDetalhes(${post.id})">Ver Detalhes</button>
     `;
 
-   
     postsContainer.appendChild(postElement);
   });
 }
 
 function filtroBusca() {
-    const busca = document.getElementById('searchInput').value.toLowerCase();
-    const postsFiltrados = userPosts.filter(post => post.title.toLowerCase().includes(busca));
-    posts(postsFiltrados);
+  const busca = document.getElementById('searchInput').value.toLowerCase();
+  const postsFiltrados = userPosts.filter(post =>
+    post.title.toLowerCase().includes(busca)
+  );
+  renderPosts(postsFiltrados);
 }
 
 function mostrarDetalhes(postId) {
-  const produto = userPosts.find(post => post.id === postId);
+  const post = userPosts.find(p => p.id === postId);
   const conteudo = document.getElementById('conteudo');
-  
+  const modal = document.getElementById('detalhes');
+
+  if (!post || !conteudo || !modal) return;
 
   conteudo.innerHTML = `
-      <h3>${produto.title}</h3>
-      <p>${produto.body}</p>
+    <h3>${post.title}</h3>
+    <p>${post.body}</p>
   `;
 
- 
-  document.getElementById('detalhes').classList.remove('oculto');
+  modal.classList.remove('oculto');
 }
-
 
 function fecharModal() {
-  document.getElementById('detalhes').classList.add('oculto');
+  const modal = document.getElementById('detalhes');
+  if (modal) {
+    modal.classList.add('oculto');
+  }
 }
 
-
-window.onload = posts;
+window.onload = () => {
+  renderPosts();
+};
