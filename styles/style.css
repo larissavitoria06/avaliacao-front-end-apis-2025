@@ -6,11 +6,11 @@
 }
 
 :root {
-    --primary: #7e4b96;
-    --secondary: #d3b3e2;
-    --text-dark: #333;
-    --text-light: #fff;
-    --bg-main: #ffffff;
+    --primary: #454fa5;
+    --secondary: #e4e4e4;
+    --text-dark: #000000;
+    --text-light: #000000;
+    --bg-main: #a9a4aa;
     --bg-modal: rgba(0, 0, 0, 0.5);
 }
 
@@ -24,7 +24,7 @@ body {
 }
 
 header {
-    background-color: var(--primary);
+    background-color: #454fa5;
     color: var(--text-light);
     padding: 1rem;
     text-align: center;
@@ -79,7 +79,7 @@ button {
 }
 
 button:hover {
-    background-color: #683d7a;
+    background-color: #343a74;
 }
 
 .header-modal button {
@@ -99,8 +99,9 @@ footer {
 }
 
 #postsContainer {
-    width: 90%;
-    max-width: 800px;
+    width: 60%;
+    max-width: 700px;
+    
 }
 
 .post {
